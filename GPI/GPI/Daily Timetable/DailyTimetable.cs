@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace GPI
 {
-    class DailyTimetable
+    class DailyTimetable : Events
     {
-        DateTime dt = new DateTime();
+        List<EventInfo> allDailyEvents = new List<EventInfo>();
+
+        void AddEvent()
+        {
+            allDailyEvents.Add(base.DailyEvent("Lunch", DateTime.Today, new DateTime(2015, 8, 14)));
+            Console.WriteLine(allDailyEvents[0].name);
+        }
     }
 }
