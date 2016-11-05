@@ -29,6 +29,22 @@ namespace GPI
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
+            
+        }
+
+        private void bNavBar_DTT_Click(object sender, EventArgs e)
+        {
+            ChangeSelectedButton(bNavBar_DTT);
+        }
+
+        private void bNavBar_Temp_Click(object sender, EventArgs e)
+        {
+            ChangeSelectedButton(bNavBar_Temp);
+        }
+
+        void StoreNavButtons ()
+        {
+            //Creates a list of all nav bar controls
             navBarControls = new List<KeyValuePair<Panel, Button>>();
             foreach(Control ctl in pNavBar.Controls)
             {
@@ -41,16 +57,6 @@ namespace GPI
                     btn.BackColor = unselectedBtn;
                 }
             }
-        }
-
-        private void bNavBar_DTT_Click(object sender, EventArgs e)
-        {
-            ChangeSelectedButton(bNavBar_DTT);
-        }
-
-        private void bNavBar_Temp_Click(object sender, EventArgs e)
-        {
-            ChangeSelectedButton(bNavBar_Temp);
         }
 
         //Change the selected button and panels colour and all the other buttons and panels in the nav bar
@@ -70,6 +76,19 @@ namespace GPI
                     ctl.Value.BackColor = selectedBtn;
                 }
             }
+        }
+
+        private void bDebugSetValues_Click(object sender, EventArgs e)
+        {
+            string title = tbTitle.Text;
+            string startTime = tbStartTime.Text;
+            string endTime = tbEndTime.Text;
+
+            //Here you change the labels
+
+            lEventTitle.Text = title;
+            lEventStartTime.Text = startTime;
+            lEventEndTime.Text = endTime;
         }
     }
 }

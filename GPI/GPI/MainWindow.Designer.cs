@@ -47,9 +47,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lEventTitle = new System.Windows.Forms.Label();
+            this.lEventStartTime = new System.Windows.Forms.Label();
+            this.lEventEndTime = new System.Windows.Forms.Label();
             this.pMainWindow.SuspendLayout();
             this.pActiveModule.SuspendLayout();
             this.pNavBar.SuspendLayout();
@@ -184,6 +184,7 @@
             this.bDebugSetValues.TabIndex = 0;
             this.bDebugSetValues.Text = "Create Event";
             this.bDebugSetValues.UseVisualStyleBackColor = true;
+            this.bDebugSetValues.Click += new System.EventHandler(this.bDebugSetValues_Click);
             // 
             // label1
             // 
@@ -198,9 +199,9 @@
             // pDebug
             // 
             this.pDebug.BackColor = System.Drawing.Color.MistyRose;
-            this.pDebug.Controls.Add(this.label7);
-            this.pDebug.Controls.Add(this.label6);
-            this.pDebug.Controls.Add(this.label5);
+            this.pDebug.Controls.Add(this.lEventEndTime);
+            this.pDebug.Controls.Add(this.lEventStartTime);
+            this.pDebug.Controls.Add(this.lEventTitle);
             this.pDebug.Controls.Add(this.label4);
             this.pDebug.Controls.Add(this.label3);
             this.pDebug.Controls.Add(this.label2);
@@ -262,32 +263,32 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Event End Time";
             // 
-            // label5
+            // lEventTitle
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(17, 160);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(30, 13);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Title:";
+            this.lEventTitle.AutoSize = true;
+            this.lEventTitle.Location = new System.Drawing.Point(17, 160);
+            this.lEventTitle.Name = "lEventTitle";
+            this.lEventTitle.Size = new System.Drawing.Size(30, 13);
+            this.lEventTitle.TabIndex = 7;
+            this.lEventTitle.Text = "Title:";
             // 
-            // label6
+            // lEventStartTime
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(17, 186);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 13);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Start time:";
+            this.lEventStartTime.AutoSize = true;
+            this.lEventStartTime.Location = new System.Drawing.Point(17, 186);
+            this.lEventStartTime.Name = "lEventStartTime";
+            this.lEventStartTime.Size = new System.Drawing.Size(54, 13);
+            this.lEventStartTime.TabIndex = 7;
+            this.lEventStartTime.Text = "Start time:";
             // 
-            // label7
+            // lEventEndTime
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(17, 213);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(51, 13);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "End time:";
+            this.lEventEndTime.AutoSize = true;
+            this.lEventEndTime.Location = new System.Drawing.Point(17, 213);
+            this.lEventEndTime.Name = "lEventEndTime";
+            this.lEventEndTime.Size = new System.Drawing.Size(51, 13);
+            this.lEventEndTime.TabIndex = 7;
+            this.lEventEndTime.Text = "End time:";
             // 
             // MainWindow
             // 
@@ -327,9 +328,9 @@
         private System.Windows.Forms.Panel pNavBar_Temp;
         private System.Windows.Forms.Button bNavBar_Temp;
         private System.Windows.Forms.Panel pDebug;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lEventEndTime;
+        private System.Windows.Forms.Label lEventStartTime;
+        private System.Windows.Forms.Label lEventTitle;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
