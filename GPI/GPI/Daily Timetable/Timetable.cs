@@ -6,51 +6,27 @@ using System.Threading.Tasks;
 
 namespace GPI
 {
+    // this class is going to sort out where the events go during day
+    // - intercepts with the main events
+    // - intercepts with the daily events with each other
     class Timetable : Events
     {
-        // storing all the daily events in this list
-        public List<EventInfo> allDailyEvents = new List<EventInfo>();
+        // storing all the events in this list
+        public List<EventInfo> allEvents = new List<EventInfo>();   // need to get the events from the xml file
 
-        // add a daily event
-        public void AddEvent(string title, string startTime, string endTime)
+        // when creating a timetable, add in the events
+        public Timetable(Events addedEvents)
         {
-            // start time conversion to dateTime
-            DateTime st = DateTime.Parse(startTime);
-            // end time conversion to dateTime
-            DateTime et = DateTime.Parse(endTime);
-
-            allDailyEvents.Add(DailyEvent(title, st, et));
+            // add all the main events to allEvents list
+            for (int i = 0; i < addedEvents.allMainEvents.Count(); i++)
+                allEvents.Add(addedEvents.allMainEvents[i]);
+            // add all the daily events to allEvents list
+            for (int i = 0; i < addedEvents.allDailyEvents.Count(); i++)
+                allEvents.Add(addedEvents.allDailyEvents[i]);
         }
-        // add a daily event without a end time
-        public void AddEvent(string title, string startTime)
+        public Timetable()
         {
-            // start time conversion to dateTime
-            DateTime st = DateTime.Parse(startTime);
-            // end time equals start time plus 1 hour
-            DateTime et = st.AddHours(1);
 
-            allDailyEvents.Add(DailyEvent(title, st, et));
-        }
-
-        // add a main event
-        public void AddEvent(string title, string description, string location, string startTime, string endTime)
-        {
-            // start time conversion to dateTime
-            DateTime st = DateTime.Parse(startTime);
-            // end time conversion to dateTime
-            DateTime et = DateTime.Parse(endTime);
-
-            allDailyEvents.Add(MainEvent(title, description, location, st, et));
-        }
-        // add a main event without a end time
-        public void AddEvent(string title, string description, string location, string startTime)
-        {
-            // start time conversion to dateTime
-            DateTime st = DateTime.Parse(startTime);
-            // end time equals start time plus 1 hour
-            DateTime et = st.AddHours(1);
-
-            allDailyEvents.Add(MainEvent(title, description, location, st, et));
         }
     }
 }

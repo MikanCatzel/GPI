@@ -85,12 +85,21 @@ namespace GPI
             string endTime = tbEndTime.Text;
 
             //Here you change the labels
-            Timetable dailyTimetable = new Timetable();
-            dailyTimetable.AddEvent(title, startTime, endTime);
+            Events dailyTimetable = new Events();
+            if (endTime == "")
+                dailyTimetable.AddEvent(title, startTime);
+            else
+                dailyTimetable.AddEvent(title, startTime, endTime);
 
-            lEventTitle.Text = dailyTimetable.allDailyEvents[0].title;
-            lEventStartTime.Text = dailyTimetable.allDailyEvents[0].startTime.ToString();
-            lEventEndTime.Text = dailyTimetable.allDailyEvents[0].endTime.ToString();
+            //lEventTitle.Text = dailyTimetable.title;
+            //lEventStartTime.Text = dailyTimetable.startTime.ToString();
+            //lEventEndTime.Text = dailyTimetable.endTime.ToString();
+
+            Timetable tt = new Timetable(dailyTimetable);
+
+            lEventTitle.Text = tt.allEvents[0].title;
+            lEventStartTime.Text = tt.allEvents[0].startTime.ToString();
+            lEventEndTime.Text = tt.allEvents[0].endTime.ToString();
         }
     }
 }

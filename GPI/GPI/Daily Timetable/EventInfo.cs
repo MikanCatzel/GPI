@@ -15,12 +15,17 @@ namespace GPI
         public DateTime startTime;
         public DateTime endTime;
         
+        // not sure why I need this - comes up with error in Events.cs
+        public EventInfo()
+        {
+
+        }
         // for a basic event, use this constructor
         public EventInfo(string _title, DateTime _startTime, DateTime _endTime)
         {
             title = _title;
             startTime = _startTime;
-            endTime = _endTime;
+            endTime = _endTime; // doesn't have to have an endTime - just add 1 hour if not added
         }
         // for a main event, use this constructor
         public EventInfo(string _title, string _description, string _location, DateTime _startTime, DateTime _endTime)
