@@ -29,7 +29,7 @@ namespace GPI
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
-            
+            StoreNavButtons();
         }
 
         private void bNavBar_DTT_Click(object sender, EventArgs e)

@@ -30,18 +30,7 @@
         {
             this.pMainWindow = new System.Windows.Forms.Panel();
             this.pActiveModule = new System.Windows.Forms.Panel();
-            this.pDebug = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tbEndTime = new System.Windows.Forms.TextBox();
-            this.tbStartTime = new System.Windows.Forms.TextBox();
-            this.tbTitle = new System.Windows.Forms.TextBox();
-            this.bDebugSetValues = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.pNavBar = new System.Windows.Forms.Panel();
-            this.pNavBar_Temp = new System.Windows.Forms.Panel();
-            this.bNavBar_Temp = new System.Windows.Forms.Button();
             this.pNavBar_DTT = new System.Windows.Forms.Panel();
             this.bNavBar_DTT = new System.Windows.Forms.Button();
             this.pNavBar_Title = new System.Windows.Forms.Panel();
