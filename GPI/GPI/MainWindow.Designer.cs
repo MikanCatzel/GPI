@@ -31,9 +31,6 @@
             this.pMainWindow = new System.Windows.Forms.Panel();
             this.pActiveModule = new System.Windows.Forms.Panel();
             this.pDebug = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -96,9 +93,6 @@
             // pDebug
             // 
             this.pDebug.BackColor = System.Drawing.Color.MistyRose;
-            this.pDebug.Controls.Add(this.label7);
-            this.pDebug.Controls.Add(this.label6);
-            this.pDebug.Controls.Add(this.label5);
             this.pDebug.Controls.Add(this.label4);
             this.pDebug.Controls.Add(this.label3);
             this.pDebug.Controls.Add(this.label2);
@@ -111,33 +105,6 @@
             this.pDebug.Name = "pDebug";
             this.pDebug.Size = new System.Drawing.Size(332, 291);
             this.pDebug.TabIndex = 2;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(17, 213);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(51, 13);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "End time:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(17, 186);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 13);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Start time:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(17, 160);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(30, 13);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Title:";
             // 
             // label4
             // 
