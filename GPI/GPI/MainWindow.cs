@@ -16,5 +16,10 @@ namespace GPI
         {
             InitializeComponent();
         }
+
+        private void MainWindow_Load(object sender, EventArgs e)
+        {
+            this.BackColor = Color.Red;
+        }
     }
 }
