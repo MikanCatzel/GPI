@@ -8,11 +8,13 @@ namespace GPI
 {
     class DailyTimetable : Events
     {
-        List<EventInfo> allDailyEvents = new List<EventInfo>();
+        // storing all the daily events in this list
+        public List<EventInfo> allDailyEvents = new List<EventInfo>();
 
-        void AddEvent()
+        // add a daily event
+        public void AddEvent()
         {
-            allDailyEvents.Add(base.DailyEvent("Lunch", DateTime.Today, new DateTime(2015, 8, 14)));
+            allDailyEvents.Add(DailyEvent("Lunch", DateTime.Today, new DateTime(2015, 8, 14)));
             Console.WriteLine(allDailyEvents[0].name);
         }
     }

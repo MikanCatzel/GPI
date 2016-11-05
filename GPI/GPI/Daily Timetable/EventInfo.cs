@@ -8,15 +8,26 @@ namespace GPI
 {
     public class EventInfo
     {
+        // general event info
         public string name;
+        public string description;
         public DateTime startTime;
         public DateTime endTime;
         
+        // for a basic event, use this constructor
         public EventInfo(string _name, DateTime _startTime, DateTime _endTime)
         {
-            _name = name;
-            _startTime = startTime;
-            _endTime = endTime;
+            name = _name;
+            startTime = _startTime;
+            endTime = _endTime;
+        }
+        // for a main event, use this constructor
+        public EventInfo(string _name, string _description, DateTime _startTime, DateTime _endTime)
+        {
+            name = _name;
+            description = _description;
+            startTime = _startTime;
+            endTime = _endTime;
         }
     }
 }
