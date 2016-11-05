@@ -12,10 +12,14 @@ namespace GPI
         public List<EventInfo> allDailyEvents = new List<EventInfo>();
 
         // add a daily event
-        public void AddEvent()
+        public void AddEvent(string name, string startTime, string endTime)
         {
-            allDailyEvents.Add(DailyEvent("Lunch", DateTime.Today, new DateTime(2015, 8, 14)));
-            Console.WriteLine(allDailyEvents[0].name);
+            // start time conversion to dateTime
+            DateTime st = DateTime.Parse(startTime);
+            // end time conversion to dateTime
+            DateTime et = DateTime.Parse(endTime);
+
+            allDailyEvents.Add(DailyEvent(name, st, et));
         }
     }
 }
