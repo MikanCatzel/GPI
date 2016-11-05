@@ -19,7 +19,11 @@ namespace GPI
 
         private void button1_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             //hello ethan
+=======
+            // hello dean
+>>>>>>> origin/master
         }
     }
 }
