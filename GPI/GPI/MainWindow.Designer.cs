@@ -50,8 +50,6 @@
             this.pNavBar_Title = new System.Windows.Forms.Panel();
             this.lProgramDesc = new System.Windows.Forms.Label();
             this.lProgramTitle = new System.Windows.Forms.Label();
-<<<<<<< HEAD
-=======
             this.bNavBar_Temp = new System.Windows.Forms.Button();
             this.pNavBar_Temp = new System.Windows.Forms.Panel();
             this.bDebugSetValues = new System.Windows.Forms.Button();
@@ -66,7 +64,6 @@
             this.lEventTitle = new System.Windows.Forms.Label();
             this.lEventStartTime = new System.Windows.Forms.Label();
             this.lEventEndTime = new System.Windows.Forms.Label();
->>>>>>> origin/master
             this.pMainWindow.SuspendLayout();
             this.pActiveModule.SuspendLayout();
             this.pDebug.SuspendLayout();
@@ -306,8 +303,6 @@
             this.lProgramTitle.TabIndex = 1;
             this.lProgramTitle.Text = "GPI";
             // 
-<<<<<<< HEAD
-=======
             // bNavBar_Temp
             // 
             this.bNavBar_Temp.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -449,7 +444,6 @@
             this.lEventEndTime.TabIndex = 7;
             this.lEventEndTime.Text = "End time:";
             // 
->>>>>>> origin/master
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
