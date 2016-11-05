@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Daily Timetable\DailyTimetable.cs" />
+    <Compile Include="Daily Timetable\Timetable.cs" />
     <Compile Include="Daily Timetable\EventInfo.cs" />
     <Compile Include="Daily Timetable\Events.cs" />
     <Compile Include="MainWindow.cs">

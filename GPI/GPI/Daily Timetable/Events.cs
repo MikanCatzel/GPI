@@ -9,16 +9,16 @@ namespace GPI
     public class Events
     {
         // daily events during the day, returns the eventInfo
-        protected EventInfo DailyEvent(string name, DateTime startTime, DateTime endTime)
+        protected EventInfo DailyEvent(string title, DateTime startTime, DateTime endTime)
         {
-            EventInfo e = new EventInfo(name, startTime, endTime);
+            EventInfo e = new EventInfo(title, startTime, endTime);
             return e;
         }
 
         // main events creation, returns the eventInfo
-        protected EventInfo MainEvent(string name, string description, DateTime startTime, DateTime endTime)
+        protected EventInfo MainEvent(string title, string description, string location, DateTime startTime, DateTime endTime)
         {
-            EventInfo e = new EventInfo(name, description, startTime, endTime);
+            EventInfo e = new EventInfo(title, description, location, startTime, endTime);
             return e;
         }
     }
