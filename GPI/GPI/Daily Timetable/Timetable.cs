@@ -15,14 +15,18 @@ namespace GPI
         public List<EventInfo> allEvents = new List<EventInfo>();   // need to get the events from the xml file
 
         // when creating a timetable, add in the events
-        public Timetable(Events addedEvents)
+        public Timetable(EventInfo[] addedEvents)
         {
-            // add all the main events to allEvents list
-            for (int i = 0; i < addedEvents.allMainEvents.Count(); i++)
-                allEvents.Add(addedEvents.allMainEvents[i]);
-            // add all the daily events to allEvents list
-            for (int i = 0; i < addedEvents.allDailyEvents.Count(); i++)
-                allEvents.Add(addedEvents.allDailyEvents[i]);
+            foreach (EventInfo e in addedEvents)
+            {
+                allEvents.Add(e);
+            }
+            //// add all the main events to allEvents list
+            //for (int i = 0; i < addedEvents.allMainEvents.Count(); i++)
+            //    allEvents.Add(addedEvents.allMainEvents[i]);
+            //// add all the daily events to allEvents list
+            //for (int i = 0; i < addedEvents.allDailyEvents.Count(); i++)
+            //    allEvents.Add(addedEvents.allDailyEvents[i]);
         }
         public Timetable()
         {
