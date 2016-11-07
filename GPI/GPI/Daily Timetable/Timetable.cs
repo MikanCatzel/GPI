@@ -28,9 +28,5 @@ namespace GPI
             //for (int i = 0; i < addedEvents.allDailyEvents.Count(); i++)
             //    allEvents.Add(addedEvents.allDailyEvents[i]);
         }
-        public Timetable()
-        {
-
-        }
     }
 }

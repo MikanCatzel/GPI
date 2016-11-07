@@ -11,25 +11,22 @@ namespace GPI
     {
         static string XMLfilePath = "Timetable.xml";
          
-        public void WriteToXML (List<EventInfo> _allEvents)
-        {
-            
-        }
-
         public List<EventInfo> ReadEventsFromXML ()
         {
             List<EventInfo> allEvents = new List<EventInfo>();
 
             using(XmlReader reader = XmlReader.Create(XMLfilePath))
             {
+                //For all the nodes that are named EventInfo
                 while(reader.ReadToFollowing("EventInfo"))
                 {
+                    //Get their attributes
                     string title = reader.GetAttribute("Title");
                     DateTime startTime = DateTime.Parse(reader.GetAttribute("Date:Start"));
                     DateTime endTime = DateTime.Parse(reader.GetAttribute("Date:End"));
-
                     string location = reader.GetAttribute("Location");
 
+                    //Then add the new eventinfo to the list
                     allEvents.Add(new EventInfo(title, startTime, endTime));
 
                     //This is for if the event was in the past
@@ -47,8 +44,8 @@ namespace GPI
 
             return allEvents;
         }
-        /*
-        public void WriteEventToXML (List<EventInfo> _allEvents)
+        
+        public void WriteEventsToXML (List<EventInfo> _allEvents)
         {
             try
             {
@@ -64,15 +61,20 @@ namespace GPI
 
                 using(XmlWriter writer = XmlWriter.Create(XMLfilePath, XMLsettings))
                 {
+                    //Write all events under the element "Events"
                     writer.WriteStartDocument();
                     writer.WriteStartElement("Events");
 
                     foreach(EventInfo e in _allEvents)
                     {
+                        //For every eventinfo
                         writer.WriteStartElement("EventInfo");
 
-                        writer.WriteAttributeString("Title", e.Title);
-                        writer.WriteAttributeString("Date", e.Date.ToString());
+                        //Write all the attributes
+                        writer.WriteAttributeString("Title", e.title);
+                        writer.WriteAttributeString("Date:Start", e.startTime.ToString());
+                        writer.WriteAttributeString("Date:End", e.endTime.ToString());
+                        writer.WriteAttributeString("Location", e.location.ToString());
 
                         writer.WriteEndElement();
                     }
@@ -81,13 +83,13 @@ namespace GPI
                     writer.WriteEndDocument();
                 }
 
-                Console.WriteLine("\nEvent added: " + events.Last<Event>().Title + "\nDate: " + events.Last<Event>().Date);
+                //Console.WriteLine("\nEvent added: " + events.Last<Event>().Title + "\nDate: " + events.Last<Event>().Date);
             }
             catch
             {
                 Console.WriteLine("Could not parse date, please try again.\nFormat: DD/MM/YYYY 12:00pm");
             }
         }
-        */
+        
     }
 }

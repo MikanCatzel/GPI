@@ -13,6 +13,8 @@ namespace GPI
     public partial class MainWindow : Form
     {
         List<KeyValuePair<Panel, Button>> navBarControls;
+        SaveXML xmlHandler;
+        Timetable timeTable;
 
         #region Color setting
         Color unselectedBtn = Color.Red;
@@ -30,6 +32,9 @@ namespace GPI
         private void MainWindow_Load(object sender, EventArgs e)
         {
             StoreNavButtons();
+            xmlHandler = new SaveXML();
+            List<EventInfo> _events = xmlHandler.ReadEventsFromXML();
+            timeTable = new Timetable(_events);
         }
 
         private void bNavBar_DTT_Click(object sender, EventArgs e)
@@ -95,11 +100,14 @@ namespace GPI
             //lEventStartTime.Text = dailyTimetable.startTime.ToString();
             //lEventEndTime.Text = dailyTimetable.endTime.ToString();
 
-            Timetable tt = new Timetable(dailyTimetable);
-
             lEventTitle.Text = tt.allEvents[0].title;
             lEventStartTime.Text = tt.allEvents[0].startTime.ToString();
             lEventEndTime.Text = tt.allEvents[0].endTime.ToString();
+        }
+
+        private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            xmlHandler.WriteEventsToXML(timeTable.allEvents);
         }
     }
 }
